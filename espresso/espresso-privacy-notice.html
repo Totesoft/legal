@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Espresso — App Privacy Notice — Totesoft</title>
+<style>
+  :root {
+    --espresso: #3a2112; --espresso-soft: #4a2e1b;
+    --tan: #8a6a4c; --tan-light: #cdb59a;
+    --cream: #f5f1e6; --card: #fdfcf8; --edge: #e6dcc9;
+    
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--cream); color: var(--espresso-soft);
+    font: 17px/1.65 Georgia, 'Times New Roman', serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    max-width: 70%; margin: 40px auto 80px; background: var(--card);
+    border: 1px solid var(--edge); border-radius: 10px;
+    padding: 56px 64px; box-shadow: 0 10px 30px rgba(74, 46, 27, 0.08);
+  }
+  h1 {
+    font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+    color: var(--espresso); font-size: 1.9em; line-height: 1.25;
+    margin: 0 0 6px; letter-spacing: 0.01em;
+  }
+  h1 + p { margin-top: 4px; }
+  h2 {
+    font-family: 'Open Sans' ,'Helvetica Neue', Arial, sans-serif;
+    color: var(--espresso); font-size: 1.15em; letter-spacing: 0.02em;
+    margin: 2.2em 0 0.5em; padding-top: 1.2em; border-top: 1px solid var(--edge);
+  }
+  p { margin: 0.7em 0; font-size: 1.05em;}
+  ul { padding-left: 1.3em; }
+  li { margin: 0.4em 0; }
+  strong { color: var(--espresso); }
+  a { color: var(--espresso); }
+  .meta { color: var(--tan); font-size: 0.92em; }
+  .footer {
+    max-width: 760px; margin: 0 auto 48px; text-align: center;
+    color: var(--tan); font-size: 0.85em;
+    font-family: 'Open Sans','Helvetica Neue', Arial, sans-serif; letter-spacing: 0.06em;
+  }
+  @media (max-width: 640px) { .page { margin: 0; border-radius: 0; padding: 32px 22px; } }
+  @media print {
+    body { background: #fff; }
+    .page { box-shadow: none; border: none; margin: 0; padding: 0; }
+    .footer { display: none; }
+  }
+</style>
+</head>
+<body>
+<main class="page">
+<h1>Espresso — App Privacy Notice</h1>
+<p class="meta"><strong>Provider:</strong> Totesoft LLC <br>info@totesoft.com <br>
+<strong>App:</strong> Espresso (Jira workflow post function, Atlassian Forge) <br>
+<strong>Last updated:</strong> August 19, 2026</p>
+<p>This notice describes how the Espresso app handles data in your Jira Cloud site. It supplements the <a href="https://www.totesoft.com/privacy-policy">Totesoft privacy policy</a>. Espresso runs entirely on Atlassian Forge infrastructure; Totesoft operates no servers of its own for this app, and no data is sent to Totesoft or to any third party.</p>
+<h2>What the app reads</h2>
+<p>When an issue passes through a workflow transition on which Espresso is configured, the app reads the two numeric source fields configured for that rule from the transitioned issue, and reads Jira field metadata (field names and types) to identify the configured fields. In the configuration screen, the app lists your site's numeric fields so an administrator can select them.</p>
+<h2>What the app writes</h2>
+<p>The app writes the calculated result to the single configured target numeric field on the transitioned issue. It writes nothing else to your issues.</p>
+<h2>What the app stores</h2>
+<p>For each configured rule, the app keeps a rolling history of the last 10 executions in Atlassian Forge hosted storage, which resides within your own Atlassian site. Each record contains: timestamp, issue key, transition id and name, operation, outcome code, severity, summary, retry count, and duration. <strong>Field values are not stored.</strong></p>
+<h2>What the app logs</h2>
+<p>Application logs contain field ids, issue keys, and outcome codes for diagnostics. <strong>Field values are never written to logs</strong> in normal operation. The only exception is a debug mode that Totesoft may enable on a specific environment, at a customer's request, during a support investigation.</p>
+<h2>What the app does not do</h2>
+<ul>
+<li>No data leaves the Atlassian platform: the app makes no network calls to any non-Atlassian host.</li>
+<li>No third-party subprocessors are used beyond Atlassian's own Forge platform.</li>
+<li>No personal data is collected deliberately; issue keys appear in diagnostics as context only.</li>
+<li>No credentials, tokens, or secrets are collected or stored.</li>
+</ul>
+<h2>Retention and deletion</h2>
+<p>Run history is capped at 10 records per rule; older records are overwritten automatically. If the app is uninstalled, data in Atlassian Forge hosted storage is soft-deleted by Atlassian: reinstalling the app within 21 days relinks it to the existing data, and after that window the data is permanently deleted in accordance with Atlassian's standard data retention and disposal policy. Contact us to request earlier removal of stored diagnostics.</p>
+<h2>Data subject requests</h2>
+<p>For access or deletion requests relating to data handled by the app, contact <strong>info@totesoft.com</strong>. Because all app data resides in your own Atlassian site, your Jira administrators can also inspect or remove it directly by uninstalling the app.</p>
+<h2>Changes</h2>
+<p>We will update this notice when the app's data handling changes and revise the date above. Material changes will be noted in the app's release notes.</p>
+</main>
+<div class="footer">TOTESOFT LLC &nbsp;·&nbsp; www.totesoft.com</div>
+</body>
+</html>

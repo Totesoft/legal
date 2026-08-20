@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wake — App Privacy Notice — Totesoft</title>
+<style>
+  :root {
+    --espresso: #3a2112; --espresso-soft: #4a2e1b;
+    --tan: #8a6a4c; --tan-light: #cdb59a;
+    --cream: #f5f1e6; --card: #fdfcf8; --edge: #e6dcc9;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--cream); color: var(--espresso-soft);
+    font: 17px/1.65 Georgia, 'Times New Roman', serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    max-width: 760px; margin: 40px auto 80px; background: var(--card);
+    border: 1px solid var(--edge); border-radius: 10px;
+    padding: 56px 64px; box-shadow: 0 10px 30px rgba(74, 46, 27, 0.08);
+  }
+  h1 {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    color: var(--espresso); font-size: 1.9em; line-height: 1.25;
+    margin: 0 0 6px; letter-spacing: 0.01em;
+  }
+  h1 + p { margin-top: 4px; }
+  h2 {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    color: var(--espresso); font-size: 1.15em; letter-spacing: 0.02em;
+    margin: 2.2em 0 0.5em; padding-top: 1.2em; border-top: 1px solid var(--edge);
+  }
+  p { margin: 0.7em 0; }
+  ul { padding-left: 1.3em; }
+  li { margin: 0.4em 0; }
+  strong { color: var(--espresso); }
+  a { color: var(--espresso); }
+  .meta { color: var(--tan); font-size: 0.92em; }
+  .footer {
+    max-width: 760px; margin: 0 auto 48px; text-align: center;
+    color: var(--tan); font-size: 0.85em;
+    font-family: 'Helvetica Neue', Arial, sans-serif; letter-spacing: 0.06em;
+  }
+  @media (max-width: 640px) { .page { margin: 0; border-radius: 0; padding: 32px 22px; } }
+  @media print {
+    body { background: #fff; }
+    .page { box-shadow: none; border: none; margin: 0; padding: 0; }
+    .footer { display: none; }
+  }
+</style>
+</head>
+<body>
+<main class="page">
+<h1>Wake — App Privacy Notice</h1>
+<p class="meta"><strong>Provider:</strong> Totesoft LLC · info@totesoft.com
+<strong>App:</strong> Wake (Jira dashboard gadget, Atlassian Forge)
+<strong>Last updated:</strong> August 19, 2026</p>
+<p>This notice describes how the Wake app handles data in your Jira Cloud site. It supplements the <a href="https://www.totesoft.com/privacy-policy">Totesoft privacy policy</a>. Wake runs entirely on Atlassian Forge infrastructure and in your browser within Jira; Totesoft operates no servers of its own for this app, and no data is sent to Totesoft or to any third party.</p>
+<h2>What the app reads</h2>
+<p>To display the gadget, the app reads Jira issues matching the filter or JQL the gadget is configured with — including the fields used for grouping and the numeric fields used for sum, average, and count. It also reads Jira field metadata (names and types) and your saved filters (name, description, owner, JQL, share permissions) so the configuring user can select one. Issue data is read with the configuring user's own permissions: the gadget can never show data its viewer could not already see in Jira. [VERIFY: adjust if any call runs asApp.]</p>
+<h2>What the app writes</h2>
+<p>The app does not modify issues. It writes only its own gadget configuration.</p>
+<h2>What the app stores</h2>
+<p>Gadget configuration (selected filter, group-by fields, aggregate fields, display options) is stored in Atlassian Forge hosted storage, which resides within your own Atlassian site. <strong>Issue data is not stored</strong> — it is fetched live each time the gadget renders. [VERIFY against final implementation, including any caching.]</p>
+<h2>What the app logs</h2>
+<p>Application logs contain diagnostic events, gadget configuration identifiers, and license state for troubleshooting. <strong>Issue field values are not written to logs</strong> in normal operation. [VERIFY against production log output before publishing.]</p>
+<h2>CSV export</h2>
+<p>Licensed users may export grouped results to a CSV file. The export is generated in your browser and downloaded directly to your device; it does not pass through or get retained by Totesoft.</p>
+<h2>What the app does not do</h2>
+<ul>
+<li>No data leaves the Atlassian platform: the app makes no network calls to any non-Atlassian host.</li>
+<li>No third-party subprocessors are used beyond Atlassian's own Forge platform.</li>
+<li>No credentials, tokens, or secrets are collected or stored.</li>
+</ul>
+<h2>Retention and deletion</h2>
+<p>Gadget configuration persists while the gadget exists; removing the gadget from a dashboard stops its use. If the app is uninstalled, data in Atlassian Forge hosted storage is soft-deleted by Atlassian: reinstalling the app within 21 days relinks it to the existing data, and after that window the data is permanently deleted in accordance with Atlassian's standard data retention and disposal policy. Contact us to request earlier removal of stored configuration.</p>
+<h2>Data subject requests</h2>
+<p>For access or deletion requests relating to data handled by the app, contact <strong>info@totesoft.com</strong>. Because all app data resides in your own Atlassian site, your Jira administrators can also inspect or remove it directly.</p>
+<h2>Changes</h2>
+<p>We will update this notice when the app's data handling changes and revise the date above. Material changes will be noted in the app's release notes.</p>
+</main>
+<div class="footer">TOTESOFT LLC &nbsp;·&nbsp; www.totesoft.com</div>
+</body>
+</html>

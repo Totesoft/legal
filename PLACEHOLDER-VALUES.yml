@@ -1,0 +1,35 @@
+# Fill these values, then replace matching placeholder tokens in all Markdown files.
+# This file is a worksheet only; Jekyll does not automatically substitute these values.
+
+shared:
+  legal_effective_date: "August 19, 2026"
+  general_privacy_policy_url: "https://www.totesoft.com/privacy-policy"
+  support_contact_email: "support@totesoft.com"
+  security_contact_email: "security@totesoft.com"
+  notice_address: "No 5, Concourse Parkway, Suite 3000, Atlanta, Georgia, 30338"
+  support_url: "https://www.totesoft.com/support"
+  support_response_target: "2 business days"
+  forge_log_retention_period: "90 days"
+  data_protection_role_statement: "Totesoft is the controller of the personal data processed in connection with the Espresso app."
+  dpa_url_or_not_offered: "https://www.totesoft.com/data-protection-agreement"
+  data_request_process: "https://www.totesoft.com/data-request-process"
+  governing_law_override_or_delete: "United States law"
+
+espresso:
+  marketplace_url: "{{ESPRESSO_MARKETPLACE_URL}}"
+  documentation_url: "{{ESPRESSO_DOCUMENTATION_URL}}"
+  project_support: "{{ESPRESSO_PROJECT_SUPPORT}}"
+  debug_logging_statement: "{{ESPRESSO_DEBUG_LOGGING_STATEMENT}}"
+  data_deletion_process: "{{ESPRESSO_DATA_DELETION_PROCESS}}"
+  production_version: "{{ESPRESSO_PRODUCTION_VERSION}}"
+  existing_customer_upgrade_status: "{{ESPRESSO_EXISTING_CUSTOMER_UPGRADE_STATUS}}"
+  division_precision_decision: "{{ESPRESSO_DIVISION_PRECISION_DECISION}}"
+
+wake:
+  marketplace_url: "{{WAKE_MARKETPLACE_URL}}"
+  documentation_url: "{{WAKE_DOCUMENTATION_URL}}"
+  storage_final_statement: "{{WAKE_STORAGE_FINAL_STATEMENT}}"
+  logging_final_statement: "{{WAKE_LOGGING_FINAL_STATEMENT}}"
+  data_deletion_process: "{{WAKE_DATA_DELETION_PROCESS}}"
+  paid_feature_limits_confirmation: "{{WAKE_PAID_FEATURE_LIMITS_CONFIRMATION}}"
+  pricing_confirmation: "{{WAKE_PRICING_CONFIRMATION}}"

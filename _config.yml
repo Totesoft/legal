@@ -1,0 +1,9 @@
+title: Totesoft Legal
+email: "{{SUPPORT_CONTACT_EMAIL}}"
+description: Legal, privacy, and support information for Totesoft Atlassian Marketplace apps.
+theme: jekyll-theme-minimal
+show_downloads: false
+markdown: kramdown
+exclude:
+  - scripts
+  - PLACEHOLDER-VALUES.yml
