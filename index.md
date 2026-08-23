@@ -7,7 +7,7 @@ permalink: /
 # Totesoft Atlassian App Legal Center
 
 Provider: **Totesoft LLC**  
-General privacy policy: {{GENERAL_PRIVACY_POLICY_URL}}  
+General privacy policy: https://www.totesoft.com/privacy-policy 
 Support: [{{SUPPORT_CONTACT_EMAIL}}](mailto:{{SUPPORT_CONTACT_EMAIL}})  
 Security: [{{SECURITY_CONTACT_EMAIL}}](mailto:{{SECURITY_CONTACT_EMAIL}})
 
@@ -23,4 +23,4 @@ Security: [{{SECURITY_CONTACT_EMAIL}}](mailto:{{SECURITY_CONTACT_EMAIL}})
 - [Wake Provider-Specific Terms](./wake/terms/)
 - [Wake Support](./wake/support/)
 
-These app-specific documents supplement Totesoft's general company policies. The Marketplace listing for each app should link directly to that app's privacy policy rather than only to this index.
+These app-specific and provider specific documents supplement Totesoft's general company policies. The Marketplace listing for each app should link directly to that app's privacy policy rather than only to this index.
