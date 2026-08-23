@@ -1,0 +1,255 @@
+:root {
+  --espresso: #3a2112;
+  --espresso-soft: #4a2e1b;
+  --tan: #8a6a4c;
+  --tan-light: #cdb59a;
+  --cream: #f5f1e6;
+  --card: #ffffff;
+  --edge: #e6dcc9;
+  --policy-header-font-size: 1em;
+  --policy-font-size: 0.96em;
+  --policy-letter-spacing: 0.01em;
+  --policy-content-indent: 10px;
+  --policy-font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: white;
+  color: var(--espresso-soft);
+  font: 17px/1.90 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-size: 1.05em;
+  letter-spacing: 0.01em;
+}
+
+.page {
+  max-width: 60%;
+  margin: 0 auto 80px;
+  background: var(--card);
+  border: 0px solid var(--edge);
+  padding: 56px 64px;
+}
+
+h1 {
+  font-family: var(--policy-font-family);
+  color: var(--espresso);
+  font-size: 1.9em;
+  line-height: 1.25;
+  margin: 0 0 6px;
+  letter-spacing: 0.01em;
+  padding-bottom: 20px;
+}
+
+span {
+  margin: 0 10px;
+}
+
+.banner {
+  width: 100%;
+  padding: 18px 0;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  text-align: center;
+  background: #f2f2f2;
+}
+
+.banner span {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+h1 + p {
+  margin-top: 5px;
+}
+
+h2 {
+  font-family: var(--policy-font-family);
+  color: var(--espresso);
+  font-size: var(--policy-header-font-size);
+  letter-spacing: var(--policy-letter-spacing);
+  margin: 2.2em 0 0.5em;
+  padding-top: 1.2em;
+  border-top: 1px solid var(--edge);
+}
+
+p {
+  margin: 0.9em 0;
+  font-family: var(--policy-font-family);
+}
+
+.scribe {
+  padding: 0;
+  margin-bottom: 20px;
+  font-family: var(--policy-font-family);
+}
+
+.indent {
+  padding-left: var(--policy-content-indent);
+  margin-bottom: 20px;
+  margin-left: 10px;
+  font-size: var(--policy-font-size);
+  letter-spacing: var(--policy-letter-spacing);
+}
+ul {
+  padding-left: 1.4em;
+  margin-bottom: 20px;
+  margin-left: 10px;
+  
+}
+
+li {
+  margin: 0.6em 0;
+}
+@counter-style lower-alpha-parentheses {
+  system: alphabetic; 
+  symbols: a b c d e f g h i j k l m
+           n o p q r s t u v w x y z;
+  prefix: "("; 
+  suffix: ") ";
+
+}
+@counter-style lower-roman-parentheses {
+   system: extends lower-roman;
+   prefix: "(";
+   suffix: ") ";
+
+}
+.alpha-list {
+list-style: lower-alpha-parentheses;
+padding-left: 2.5rem;
+}
+.alpha-list ol {
+   list-style: lower-roman-parentheses;
+}
+strong,a {
+  color: var(--espresso);
+}
+
+.meta {
+  font-family: var(--policy-font-family);
+  color: var(--tan);
+  font-size: 0.95em;
+  letter-spacing: 0.02em;
+  padding-bottom: 20px;
+}
+
+.footer {
+  max-width: 760px;
+  margin: 0 auto 48px;
+  text-align: center;
+  color: var(--tan);
+  font-size: 0.85em;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  letter-spacing: 0.06em;
+}
+
+@media (max-width: 640px) {
+  .page {
+    margin: 0;
+    border-radius: 0;
+    padding: 32px 22px;
+  }
+}
+
+@media print {
+  body {
+    background: #fff;
+  }
+
+  .page {
+    box-shadow: none;
+    border: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .footer {
+    display: none;
+  }
+}
+table {
+  width: 100%;
+}
+td {
+  width: 33%;
+  padding: 0.5em;
+}
+th, td{
+   text-align: left;
+   border-bottom: 1px solid var(--edge);
+   font-size: 0.9em;
+}
+th {
+  border-bottom: 2px solid var(--edge);
+}
+.placeholder {
+  margin: 0;
+  color: #9a3412;
+  background: #ffedd5;
+  padding: 0 0.2em;
+  border-radius: 3px;
+  font-weight: 600;
+}
+
+.proposed {
+  color: #1e40af;
+  background: #dbeafe;
+  padding: 0.15em 0.25em;
+  border-radius: 3px;
+}
+
+.code {
+  font-family: monospace;
+  font-size: 0.9em;
+  color: var(--espresso);
+  background: #e8caaf;
+}
+
+sup.cite {
+  font-size: 0.8em;
+  font-weight: 700;
+  line-height: 0;
+  margin: 0 0.12em;
+  vertical-align: super;
+}
+
+sup.cite a {
+  color: #1d4ed8;
+  text-decoration: none;
+}
+
+.footnotes {
+  margin-top: 3em;
+  padding-top: 1.2em;
+  border-top: 1px solid var(--edge);
+  font-size: 0.88em;
+  color: var(--tan);
+}
+
+.footnotes h2 {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+  font-size: 1em;
+}
+
+.footnotes ol {
+  padding-left: 1.4em;
+}
+
+.footnotes li {
+  margin: 0.6em 0;
+  font-size: 0.95em;
+}
+
+.footnotes a {
+  word-break: break-all;
+}
