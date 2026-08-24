@@ -57,11 +57,6 @@
                             <li>The customer controls which workflows and fields are configured and remains responsible for the Jira content placed in those fields and for providing required notices to its users.</li>
                           </ol>
                   </li>
-                  <li>  Totesoft personnel have no access to End-User Data; the only exception is diagnostic log access through Atlassian's Forge tooling during a customer-initiated support investigation, as described in our app privacy notice and debug logging statement. Espresso marketplace app does not store or transfer end-userdata outside of the Atlassian platform.
-                  </li>
-                  <li>
-                        The customer controls which workflows and fields are configured and remains responsible for the Jira content placed in those fields and for providing required notices to its users.
-                  </li>
                 </ol>
         </div>
         </div>
@@ -105,7 +100,7 @@
           <ol class="alpha-list">
             <li><strong>How it is grouped</strong></li>
               <ol>
-                <li>Records are grouped per rule. The storage key is derived from the rule's three configured custom field identifiers (source 1, source 2, target) — for example espresso:runs:customfield_10089.customfield_10090.customfield_10064. The key contains field identifiers only; it contains no issue data and no field values.</li>
+                <li>Records are grouped per rule. The storage key is derived from the rule's three configured custom field identifiers (source 1, source 2, target) — for example espresso:runs: customfield_10089, customfield_10090,  customfield_10064. The key contains field identifiers only; it contains no issue data and no field values.</li>
                 <li>Because identity is the field triple, two post functions configured with the same three fields on different transitions share one history. Each record carries its own transition identifier and name, so the entries remain distinguishable.</li>
               </ol>         
             
