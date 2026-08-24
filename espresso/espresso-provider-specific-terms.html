@@ -30,45 +30,89 @@
 <div class="scribe">
   <h1>Totesoft Provider-Specific Terms — Espresso</h1>
   <p class="meta">
+    <strong>Effective Date:</strong> August 24, 2026<br>
       <strong>Provider:</strong> Totesoft LLC ("Totesoft", "Provider")<br>
       <strong>Email:</strong> <a href="mailto:info@totesoft.com">info@totesoft.com</a><br>
       <strong>App:</strong> Espresso — a Jira workflow post function (the "App")<br>
-      <strong>Last updated:</strong> August 20, 2026
+      <strong> https://marketplace.atlassian.com/apps/1236477/espresso</strong><br>
     </p>
   </div>
 <div class="scribe">
 <p>These Provider-Specific Terms supplement the Standard End User Agreement published by Atlassian (the "Standard Agreement") and apply to Customer's use of the App obtained through the Atlassian Marketplace. Capitalized terms not defined here have the meanings given in the Standard Agreement. If these Provider-Specific Terms conflict with the Standard Agreement, these Provider-Specific Terms control to the extent the Standard Agreement permits.</p>
 </div>
 <div class="scribe">
-<h2>1. The App; No Fees</h2>
-<div class="indent">The App is made available through the Atlassian Marketplace free of charge. No fees are payable to Totesoft for use of the App, and nothing in these Provider-Specific Terms creates a payment obligation. Totesoft may release updated versions of the App from time to time; updates are delivered through the Atlassian platform.</div>
+  <h2>1. Espresso service</h2>
+  <div class="indent">Espresso is a Jira Cloud workflow post function that an authorized Jira administrator can configure to read two numeric source fields after a workflow transition, apply a supported arithmetic operation, and write the result to a configured numeric target field. Current supported operations are addition, subtraction, multiplication, and division.</div>
 </div>
 <div class="scribe">
-<h2>2. Scope of the App</h2>
-<div class="indent">The App performs arithmetic calculations between two numeric Jira issue fields and writes the result to a target numeric field when an issue passes through a workflow transition on which the App is configured. The App runs entirely on Atlassian Forge infrastructure and does not transmit Customer data to any Totesoft-hosted or third-party system. Details of the data the App reads, writes, stores, and logs are described in the App's privacy notice at [APP PRIVACY NOTICE URL].</div>
+<h2>2. Free Marketplace app</h2>
+<div class="indent">
+  <p>Espresso is currently offered as a free Atlassian Marketplace app. Totesoft does not charge a separate Espresso subscription fee under the current listing. Atlassian may still require a customer account and may apply its own platform terms.</p>
+  <p>Totesoft may introduce optional paid offerings, change the payment model, or discontinue Espresso only in accordance with applicable law, Atlassian Marketplace rules, the Standard Agreement, and any notice obligations. A future paid offering will not apply retroactively without the required customer agreement or Marketplace action.</p>
 </div>
 <div class="scribe">
-<h2>3. Support</h2>
-<div class="indent">Totesoft provides support for the App on a commercially reasonable, best-effort basis, without a guaranteed response time or service level. Support requests may be submitted to <strong>info@totesoft.com</strong> or through the support channel linked from the App's Marketplace listing. Totesoft does not provide support for modified use of the App outside its documented functionality.</div>
+<h2>3. Customer responsibilities</h2>
+<div class="indent">
+  The customer is responsible for:
+  <ol class="alpha-list">
+    <li>Limiting workflow administration to authorized personnel;</li>
+    <li>Configuring Espresso according to the instructions provided in the App's documentation;</li>
+         <ol>
+          <li>selecting appropriate source and target fields, with supported arithmetic operations;</li>
+          <li>Ensuring the target field is available for the relevant project and issue type;</li>
+          <li>Configuring the App to run after the workflow transition, with a configured delay;</li>
+          <li>Testing each rule in a non-production or controlled workflow before broad use;</li>
+          <li>Reviewing recent-run outcomes and correcting invalid configurations;</li>
+          <li>Confirming that calculated values are suitable for the customer's business process; </li>
+          <li>Maintaining any independent records or backups required by the customer.</li>
+         </ol>
+    <li>Monitoring the App's performance and providing feedback to Totesoft if necessary.</li>
+    <li>Ensuring that the App is used in compliance with all applicable laws, regulations, and Atlassian Marketplace rules.</li>
+  </ul>
+  <p>Espresso runs after a transition. The target value may update shortly after the issue changes. Empty source fields are not treated as zero. Division by zero and non-finite results are rejected. Espresso does not round or truncate calculated results; Jira applies the decimal precision configured on the target number field.</p>
+  <ol>
+    <li>Espresso does not round or truncate calculated results;Espresso writes the full calculated value. Any rounding follows the decimal places set on the Jira target field.</li>
+  </ol>
+</div>
 </div>
 <div class="scribe">
-<h2>4. Privacy</h2>
-<div class="indent">Totesoft's general privacy policy is available at [GENERAL PRIVACY POLICY URL], and the App-specific privacy notice at [APP PRIVACY NOTICE URL]. The App is designed so that Customer content remains within the Customer's Atlassian site: computation occurs in Forge functions, diagnostic run history is stored in Forge hosted storage on the Customer's site, and configured field values are not written to application logs in normal operation.</div>
+<h2>4. No professional advice or guaranteed business outcome</h2>
+<div class="indent">
+  Espresso performs configured arithmetic. It does not provide accounting, payroll, tax, legal, medical, safety, or financial advice. The customer must independently verify any value used for compensation, billing, compliance, safety, eligibility, or other material decisions.
+</div>
 </div>
 <div class="scribe">
-<h2>5. Governing Law; Courts</h2>
+  <h2>5. Atlassian platform dependency</h2>
+  <div class="indent">
+    Espresso depends on Jira Cloud, Atlassian Forge, Jira REST APIs, workflow behavior, field contexts, permissions, quotas, rate limits, and a Forge workflow post-function module that Atlassian currently labels Preview. Atlassian may change these services. Totesoft will use commercially reasonable efforts to maintain compatibility but does not control Atlassian's platform availability or release schedule.
+  </div>
+  </div>
+<div class="scribe">
+  <h2>6. Data and privacy</h2>
+  <div class="indent">
+   <p> Espresso depends on Jira Cloud, Atlassian Forge, Jira REST APIs, workflow behavior, field contexts, permissions, quotas, rate limits, and a Forge workflow post-function module that Atlassian currently labels Preview. Atlassian may change these services. Totesoft will use commercially reasonable efforts to maintain compatibility but does not control Atlassian's platform availability or release schedule.</p>
+    <p>Totesoft does not currently offer a separate Data Processing Addendum for Espresso. Customer Jira content is processed in the customer’s Atlassian site under the customer’s agreement with Atlassian. Totesoft’s handling of app diagnostics is described in the Espresso Privacy Policy. Customers who need a DPA or similar terms should email info@totesoft.com.</p>
+  </div>
+  </div>
+<div class="scribe">
+<h2>7. Support</h2>
+<div class="indent">Totesoft provides support for the App on a commercially reasonable, best-effort basis. Support requests should be emailed to <strong>info@totesoft.com</strong>. Totesoft aims to acknowledge a request within three business days. That is a response target, not a guaranteed service level, unless a separate written agreement says otherwise. Totesoft does not currently use a support form or ticketing portal, and does not provide support for modified use of the App outside its documented functionality.</div>
+</div>
+<div class="scribe">
+<h2>8. Source code and intellectual property</h2>
+<div class="indent">Espresso and its source code are proprietary to Totesoft LLC unless a specific file or component expressly states a different license. Access to a source repository does not grant a license to copy, modify, distribute, host, resell, or create derivative works beyond rights expressly granted by the Standard Agreement or an applicable open-source license notice.</div>
+<div class="scribe">
+<h2>9. Governing Law; Courts</h2>
 <div class="indent">As permitted by Section 19.2 of the Standard Agreement, these Provider-Specific Terms specify the following: the Governing Law is the laws of the State of Georgia, U.S.A., excluding its conflict-of-laws rules, and the Courts are the state courts located in DeKalb County, Georgia (including the Superior Court of DeKalb County) and the United States District Court for the Northern District of Georgia, Atlanta Division. Each party consents to the personal jurisdiction and exclusive venue of those courts. Except as expressly stated in this Section, these Provider-Specific Terms do not modify Section 19 of the Standard Agreement.</div>
 </div>
 <div class="scribe">
-<h2>6. Provider Contact</h2>
-<div class="indent">Totesoft LLC
-[REGISTERED ADDRESS], DeKalb County, Georgia, U.S.A.<br>
+<h2>10. Provider Contact</h2>
+<div class="indent">Totesoft LLC</br>
+No 5 Concourse Parkway, Suite 3000, </br>DeKalb County, <br>
+Atlanta, Georgia, 30328<br>
+USA<br>
 Email: info@totesoft.com<br>
 Website: https://www.totesoft.com</div>
-</div>
-<div class="scribe">
-<h2>7. No Other Modifications</h2>
-<div class="indent">Except as expressly stated in these Provider-Specific Terms, the Standard Agreement remains unmodified and in full force. Any further amendment must be made as provided in the Standard Agreement.</div>
 </div>
 </main>
 <div class="footer">TOTESOFT LLC &nbsp;·&nbsp; www.totesoft.com</div>
