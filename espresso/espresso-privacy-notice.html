@@ -94,14 +94,14 @@
     <div class="scribe">
           <h2>4. Data Espresso keeps in forge hosted storage</h2>
           <div class="indent">
-          <p>Espresso keeps a small bounded diagnostic history for each run, so that an administrator can see whether a rule is working. This is stored in Atlassian Forge hosted key-value storage. The current implementation groups a rule by its configured source and target field identifiers and keeps up to 10 recent records for that rule.</p>
+            <p>Espresso keeps a small bounded diagnostic history for each configured post function, so that an administrator can see whether that rule is working. This is stored in Atlassian Forge hosted key-value storage. Each rule keeps up to 10 recent records.</p>
           
           <p>Forge scopes storage per app installation. It is not a database operated by Totesoft, and Espresso contains no mechanism for Totesoft to read an installation's stored records.</p>
           <ol class="alpha-list">
             <li><strong>How it is grouped</strong></li>
               <ol>
-                <li>Records are grouped per rule. The storage key is derived from the rule's three configured custom field identifiers (source 1, source 2, target) — for example espresso:runs: customfield_10089, customfield_10090,  customfield_10064. The key contains field identifiers only; it contains no issue data and no field values.</li>
-                <li>Because identity is the field triple, two post functions configured with the same three fields on different transitions share one history. Each record carries its own transition identifier and name, so the entries remain distinguishable.</li>
+                <li>Records are grouped per configured post function. The storage key identifies that rule and is derived from its configuration. The key contains field identifiers only; it contains no issue data and no field values.</li>
+                <li>Each post function has its own run history. Two post functions that use the same three fields on different transitions do not share history.</li>
               </ol>         
             
           <li><strong>How much</strong></li>
