@@ -72,26 +72,33 @@
     </div>
 </div>
 <div class="scribe">
-      <h2>5. Application logs and Totesoft access</h2>
+      <h2>5. Logging and Totesoft access</h2>
       <div class="indent">
-            <p>Forge application logs are hosted through Atlassian's developer platform and can be accessed by authorized Totesoft personnel with access to the app's developer environments. Access must be limited to personnel with a support, security, or operational need.
-                  <ol class="alpha-list">
-                      <li>Totesoft does not operate a separate remote application server for Wake.</li>
-                      <li>Wake has no network egress and no third-party analytics or error-reporting service.</li>
-                  </ol>
-            <p>Forge application logs are hosted through Atlassian's developer platform and are visible and can be accessed by authorized Totesoft personnel through the Atlassian
-              developer console, as they are for every Forge app. They are used for diagnosing faults.
-            </p>
-            <p>Field values are not written to logs during normal operation.</p>
-            <p>Two categories of text reach logs but never storage:</p>
-                  <ol>
-                  <li>Jira error response bodies, only when verbose logging is enabled (below);</li>
-                  <li>Exception messages, when an unexpected fault occurs. The stored record keeps only the
-                  error class (for example TypeError).</li>
-                  </ol>
-            <p>
-            Totesoft does not operate a separate remote application server for Espresso. The reviewed production design declares no external network egress and no third-party analytics or error-reporting service.
-            </p>
+            <ol class="alpha-list">
+                  <li>Application logs [Info, Warn, Error]</li>
+
+                        <p>Forge application logs are hosted through Atlassian's developer platform and are visible and can be accessed by authorized Totesoft personnel through the Atlassian            <p>Forge application logs are hosted through Atlassian's developer platform and are visible and can be accessed by authorized Totesoft personnel through the Atlassian
+                        developer console, as they are for every Forge app. They are used for diagnosing faults.
+                        </p>
+                        <ol>
+                              <li>Field values, Issue Identifiers, Issue Keys, User Identifiers, and other sensitive data are not written to logs during normal operation.</li>
+
+                              <li><p>Two categories of text reach logs but never storage: Jira error response bodies and exception messages.</p>
+                                  <ul>
+                                      <li>Jira error response bodies, only when verbose logging is enabled (below);</li>
+                                      <li>Exception messages, when an unexpected fault occurs. The stored record keeps only the
+                                      error class (for example TypeError).</li>
+                                  </ul>
+                              </li>
+                        </ol>
+                  <li>Verbose logging</li>
+                      <ol>
+                              <li> Espresso supports a verbose logging mode, disabled by default.</li>
+                              <li> When enabled, log entries additionally include the numeric source values, the calculated result, and Jira's raw error responses.</li>
+                              <li> It is controlled by a Forge environment variable (ESPRESSO_DEBUG) that can only be set by Totesoft, per environment, using the Forge CLI. It is intended for diagnosing a specific reported fault and is not enabled as a matter of course.</li>
+                      </ol>
+            </div>
+            <p>Totesoft does not operate a separate remote application server for Wake. The reviewed production design declares no external network egress and no third-party analytics or error-reporting service.</p>
       </div>
 </div>
 <div class="scribe">
