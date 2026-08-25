@@ -16,22 +16,22 @@
   <strong>Provider:</strong> Totesoft LLC<br>
   <strong>Email:</strong> <a href="mailto:info@totesoft.com">info@totesoft.com</a><br>
 <strong>App:</strong> Wake (Jira dashboard gadget, Atlassian Forge)<br>
-<strong>Last updated:</strong> August 25, 2026</p>
+<strong>Last updated:</strong> August 20, 2026</p>
 </div>
 <div class="scribe">
-<p>This Privacy Policy explains how the Wake app for Jira Cloud accesses, processes, stores, and logs End-User Data. It supplements Totesoft's general privacy policy at https://www.totesoft.com/privacy-policy. To the extent that any provision of the General Policy conflicts with the provisions of this App-Specific Policy regarding Wake, the provisions of this App-Specific Policy shall prevail.</p>
+<p>This Privacy Policy explains how the Wake app for Jira Cloud accesses, processes, stores, and logs End-User Data. It supplements Totesoft's general privacy policy at https://www.totesoft.com/privacy-policy. To the extent that any provision of the General Policy conflicts with the provisions of this App-Specific Policy regarding Espresso, the provisions of this App-Specific Policy shall prevail.</p>
 </div>
 <div class="scribe">
   <h2>1. Scope and roles</h2>
   <div class="indent">
     Wake is an Atlassian Forge dashboard gadget. A user selects a saved Jira filter and display fields. Wake retrieves matching issues, displays a table, groups issues, calculates counts or numeric aggregates, and creates charts. Licensed functionality may add nested grouping, additional metrics, expanded paging, and CSV export.          <ol class="alpha-list">
             <li>
-            <strong>Licensed Authorized Jira User</strong> <strong>(Customer)</strong> - Configures the Wake gadget on a dashboard by selecting a saved Jira filter, the fields to display, the fields to group by, and any numeric aggregation to apply. Wake reads issues and presents them; it holds no Jira write permission and does not modify issue data.
+            <strong>Licensed Authorized Jira User</strong> <strong>(Customer)</strong> - Configures Wake Gadget on a dashboard to read two numeric source fields, apply an arithmetic operation, and write the result to a numeric target field.
             </li>
             <li>
                   The Customer is the data controller of all End-User Data processed by the app.
                     <ol>
-                      <li>Totesoft personnel have no routine access to End-User Data. The narrow exception is the diagnostic application logging described in section 5, which is accessible through Atlassian's Forge tooling to authorized personnel with a support, security, or operational need. As set out in section 5, those logs carry operational signals only — not issue field values, saved-filter query text, or Jira response content. Wake does not store or transfer End-User Data outside the Atlassian platform.</li>
+                      <li>Totesoft personnel have no access to End-User Data; the only exception is diagnostic log access through Atlassian's Forge tooling during a customer-initiated support investigation, as described section 5 in our debug logging statement. Wake marketplace app does not store or transfer end-userdata outside of the Atlassian platform.</li>
                       <li>The customer controls which gadgets and filters are configured and remains responsible for the Jira content placed in those gadgets and for providing required notices to its users.</li>
                       <li>The End-User who likes to view the gadget must have the necessary Jira permissions to view the data.</li>
                     </ol>
@@ -59,85 +59,129 @@
   </div>
   </div>
 <div class="scribe">
-  <h2>3. Data Export (CSV)</h2>
-  <div class="indent">
-    <p>Wake is read-only with respect to Jira issues. It does not intentionally create, edit, transition, or delete issues.</p>
-    <p>When a licensed feature allows CSV export, the export is generated from the issues already loaded and downloaded through the user's browser. Wake does not send the CSV to a Totesoft server. Once downloaded, the file is controlled by the user and the customer's device, browser, storage, security, and retention policies.</p>
-  </div>
+      <h2>3. Data Export (CSV)</h2>
+      <div class="indent">
+            <p>Wake is read-only with respect to Jira issues. It does not intentionally create, edit, transition, or delete issues.</p>
+            <p>When a licensed feature allows CSV export, the export is generated from the issues already loaded and downloaded through the user's browser. Wake does not send the CSV to a Totesoft server. Once downloaded, the file is controlled by the user and the customer's device, browser, storage, security, and retention policies.</p>
+      </div>
 </div>
 <div class="scribe">
-  <h2>4. Configuration and Forge hosted storage</h2>
-  <div class="indent">
-    <p>Jira dashboard gadget configuration is submitted to and maintained through Atlassian's gadget/Forge configuration mechanisms, which resides within your own Atlassian site.</p>
-    <p><strong>Issue data is not stored</strong> — it is fetched live each time the gadget renders. </p>
-  </div>
-  <div class="scribe">
-    <h2>5. Application logs and Totesoft access</h2>
+    <h2>4. Configuration and Forge hosted storage</h2>
     <div class="indent">
-      <p>Wake writes diagnostic events to Atlassian's Forge application logs. These logs are hosted on Atlassian's developer platform and are accessible to authorized Totesoft personnel who hold access to the app's developer environments. Access is limited to personnel with a support, security, or operational need.</p>
-      <p>Diagnostic entries are limited to non-content operational signals: event names, saved-filter and gadget identifiers, field identifiers, license state, HTTP status codes, retry and pagination state, result counts, and opaque correlation values. <strong>Wake does not write issue field values, saved-filter query text, or Jira response content to its application logs.</strong></p>
-      <p>Where a diagnostic entry needs to distinguish one query from another — for example to confirm that a paginated request series ran against a single unchanged query — Wake records a non-reversible fingerprint of the query rather than the query text.</p>
-      <ol class="alpha-list">
-        <li>Totesoft does not operate a separate remote application server for Wake.</li>
-        <li>Wake makes no network calls to non-Atlassian hosts and uses no third-party analytics or error-reporting service.</li>
-      </ol>
-    
+          <p>Jira dashboard gadget configuration is submitted to and maintained through Atlassian's gadget/Forge configuration mechanisms, which resides within your own Atlassian site.</p>
+          <p><strong>Issue data is not stored</strong> — it is fetched live each time the gadget renders. </p>
     </div>
-  </div>
-  <div class="scribe">
-    <h2>6. Error reporting</h2>
+</div>
+<div class="scribe">
+      <h2>5. Application logs and Totesoft access</h2>
+      <div class="indent">
+            <p>Forge application logs are hosted through Atlassian's developer platform and can be accessed by authorized Totesoft personnel with access to the app's developer environments. Access must be limited to personnel with a support, security, or operational need.
+                  <ol class="alpha-list">
+                      <li>Totesoft does not operate a separate remote application server for Wake.</li>
+                      <li>Wake has no network egress and no third-party analytics or error-reporting service.</li>
+                  </ol>
+            <p>Forge application logs are hosted through Atlassian's developer platform and are visible and can be accessed by authorized Totesoft personnel through the Atlassian
+              developer console, as they are for every Forge app. They are used for diagnosing faults.
+            </p>
+            <p>Field values are not written to logs during normal operation.</p>
+            <p>Two categories of text reach logs but never storage:</p>
+                  <ol>
+                  <li>Jira error response bodies, only when verbose logging is enabled (below);</li>
+                  <li>Exception messages, when an unexpected fault occurs. The stored record keeps only the
+                  error class (for example TypeError).</li>
+                  </ol>
+            <p>
+            Totesoft does not operate a separate remote application server for Espresso. The reviewed production design declares no external network egress and no third-party analytics or error-reporting service.
+            </p>
+      </div>
+</div>
+<div class="scribe">
+    <h2>6. Licensing and payment information</h2>
     <div class="indent">
-      6. Licensing and payment information
-Wake receives license-status information from Atlassian so it can apply licensed or reduced functionality. Wake does not receive payment card details. Marketplace billing, user-tier calculation, orders, renewals, refunds, and payment processing are handled by Atlassian under the customer's relationship with Atlassian.
-
-7. Purposes of processing
-Totesoft processes the data described above to:
-
-retrieve and render the selected Jira filter;
-group, aggregate, chart, and export the loaded issue data;
-apply licensed or reduced feature limits;
-preserve gadget configuration through Atlassian's supported mechanisms;
-diagnose rate limits, API failures, invalid configuration, and performance problems;
-respond to support and security requests; and
-maintain, test, and improve Wake.
-Totesoft does not sell End-User Data or use Jira issue content for advertising.
-
-8. Accuracy and partial datasets
-Wake calculations, totals, charts, and exports reflect only the issues actually loaded. A reduced-functionality installation may stop after a configured issue cap, and future licensed versions may also use paging or load-more limits for performance. Wake should visibly identify partial results. Customers must not treat partial gadget results as a complete audit, financial statement, compliance record, or random statistical sample.
-
-Final launch limits: {{WAKE_PAID_FEATURE_LIMITS_CONFIRMATION}}.
-
-9. Disclosure and subprocessors
-Wake does not send End-User Data to an external Totesoft backend or to independent analytics providers in the reviewed design. Atlassian provides Jira Cloud, Forge execution, configuration, licensing context, logging, and any Forge hosted storage retained in the final build. Atlassian's processing is governed by the customer's agreement with Atlassian and Atlassian's applicable privacy, security, and subprocessor terms.
-
-Totesoft may disclose information when required by law, to protect legal rights or security, or with the customer's authorization. If Totesoft later adds external egress, analytics, remote processing, or another subprocessor, this policy and the Marketplace Privacy and Security answers must be updated before release.  
+      <p>Wake receives license-status information from Atlassian so it can apply licensed or reduced functionality. Wake does not receive payment card details. Marketplace billing, user-tier calculation, orders, renewals, refunds, and payment processing are handled by Atlassian under the customer's relationship with Atlassian.</p>  
     </div>
+</div>
+<div class="scribe">
+    <h2>7. Purposes of processing</h2>
+    <div class="indent">
+          <p>Totesoft processes the data described above to:</p>
+              <ol class="alpha-list">
+                  <li>Retrieve and render the selected Jira filter;</li>
+                  <li>Group, aggregate, chart, and export the loaded issue data;</li>
+                  <li>Apply licensed or reduced feature limits;</li>
+                  <li>Preserve gadget configuration through Atlassian's supported mechanisms;</li>
+                  <li>Diagnose rate limits, API failures, invalid configuration, and performance problems;</li>
+                  <li>Respond to support and security requests; and</li>
+                  <li>Maintain, test, and improve Wake.</li>
+              </ol>
+              <p>Totesoft does not sell End-User Data or use Jira issue content for advertising.</p>
+    </div>
+</div>
+<div class="scribe">
+      <h2>8. Accuracy and partial datasets</h2>
+      <div class="indent">
+          <p>Wake calculations, totals, charts, and exports reflect only the issues actually loaded. A reduced-functionality installation may stop after a configured issue cap, and future licensed versions may also use paging or load-more limits for performance. Wake should visibly identify partial results. Customers must not treat partial gadget results as a complete audit, financial statement, compliance record, or random statistical sample.</p>
+          <p>Final launch limits: {{WAKE_PAID_FEATURE_LIMITS_CONFIRMATION}}.</p>
+      </div>
+</div>
+<div class="scribe">
+      <h2>9. Disclosure and subprocessors</h2>
+      <div class="indent">
+          <p>Wake does not transmit end-user Data to an external Totesoft backend or to independent analytics providers in the reviewed design. Atlassian provides Jira Cloud, Forge execution, configuration, licensing context, logging, and any Forge hosted storage retained in the final build. Atlassian's processing is governed by the customer's agreement with Atlassian and Atlassian's applicable privacy, security, and subprocessor terms.</p>
+          <p>Totesoft may disclose information when required by law, to protect legal rights or security, or with the customer's authorization. If Totesoft later adds external egress, analytics, remote processing, or another subprocessor, this policy and the Marketplace Privacy and Security answers must be updated before release.</p>
+      </div>
+</div>
+<div class="scribe">
+      <h2>10. Retention and deletion
+      <div class="indent">
+          <p><strong>Issue data:</strong> processed during gadget loading and rendering. Wake should not persist issue content in app storage after the storage cleanup recommended above.</p>
+          <p><strong>Gadget configuration:</strong> remains under Atlassian's dashboard/gadget behavior until the gadget, dashboard, installation, or related Atlassian data is changed or removed.
+          </p>
+          <p><strong>Forge logs:</strong> retained for 30 days, which is Atlassian's current Forge developer-console retention period.<sup class="cite"><a href="#fn1">1</a></sup> Any diagnostic material copied into a support ticket must follow the support-ticket retention rule approved by Totesoft.</p>
+          <p><strong>Uninstallation:</strong> Atlassian currently states that Forge hosted storage is soft-deleted and retained for 28 days after uninstall.<sup class="cite"><a href="#fn2">2</a></sup> Reinstalling does not automatically restore the prior data.<sup class="cite"><a href="#fn2">2</a></sup> With customer consent, Totesoft may request relinking through Atlassian within 21 days of uninstall so Atlassian can process the request before the retention period ends.<sup class="cite"><a href="#fn3">3</a></sup></p>
+          <p><strong><u>Customer-requested deletion:</u></strong>
+            Wake keeps only the 10 most recent run-history records per rule and overwrites the oldest record when a new one is stored. Totesoft does not have a separate customer-facing delete button for Forge key-value records. A Jira administrator who wants earlier removal of stored diagnostics should email support@totesoft.com from an authorized site-admin account. Totesoft will take the technically available steps, which may include coordinating uninstall. If the app is uninstalled, Atlassian soft-deletes Forge hosted storage and retains it for 28 days.<sup class="cite"><a href="#fn2">2</a></sup> Reinstalling does not automatically restore the prior data.<sup class="cite"><a href="#fn2">2</a></sup> With the customer's consent, Totesoft may request relinking through Atlassian within 21 days of uninstall.<sup class="cite"><a href="#fn3">3</a></sup> After that window, Atlassian permanently deletes the data under its standard retention and disposal policy.<sup class="cite"><a href="#fn3">3</a></sup> Espresso does not delete Jira issue fields, workflow configuration, or Forge logs that remain only in Atlassian's logging infrastructure.</p>
+          <p>Totesoft will not promise deletion methods that the app or Atlassian platform does not technically provide. Requests may require coordination with the customer's Jira administrator or Atlassian support.</p>
+        </div>
+      </div>
+    </div>
+<div class="scribe">
+      <h2>11. Data rights and customer requests</h2>
+      <div class="indent">
+          <p>Requests concerning access, correction, deletion, restriction, objection, or portability should be sent to support@totesoft.com.
+          Totesoft will acknowledge a request within three business days. We may ask the requester to verify their identity and their relationship to the Jira site. Because Espresso data lives in the customer's Atlassian site, we typically need authorization from a Jira administrator before accessing, changing, or requesting deletion of installation-scoped diagnostics. Requests about Jira issue content will be directed to the relevant customer administrator. Requests about Espresso's Forge-hosted run history will follow the deletion process in section 8.
+          </p>
+          <p>Because the customer controls the Jira site and issue content, Totesoft may direct an end user to the relevant customer administrator. Totesoft may require the customer's authorization before disclosing or changing installation-scoped data.
+          </p>
+      </div>
+</div>
+  <div class="scribe">
+  <h2>12.Security</h2>
+  <div class="indent">
+    Wake uses Atlassian Forge execution and Jira permission enforcement. Totesoft applies least-privilege scope review, environment access controls, code review, dependency management, field minimization, and diagnostic minimization appropriate to the app. No method of storage or transmission is completely secure.
+    Report suspected vulnerabilities to security@totesoft.com. Do not include sensitive production values in the initial report.
   </div>
-<div class="scribe">
-<h2>What the app does not do</h2>
-<ul>
-<li>No data leaves the Atlassian platform: the app makes no network calls to any non-Atlassian host.</li>
-<li>No third-party subprocessors are used beyond Atlassian's own Forge platform.</li>
-<li>No credentials, tokens, or secrets are collected or stored.</li>
-</ul>
-  </div>
 </div>
 <div class="scribe">
-<h2>What the app writes</h2>
-<p>The app does not modify issues. It writes only its own gadget configuration.</p>
-</div>
-
-<div class="scribe">
-<h2>Retention and deletion</h2>
-<p>Gadget configuration persists while the gadget exists; removing the gadget from a dashboard stops its use. If the app is uninstalled, data in Atlassian Forge hosted storage is soft-deleted by Atlassian: reinstalling the app within 21 days relinks it to the existing data, and after that window the data is permanently deleted in accordance with Atlassian's standard data retention and disposal policy. Contact us to request earlier removal of stored configuration.</p>
+  <h2>13. Do we update this notice?</h2>
+  <div class="indent">
+    <p><strong>In Short:</strong>  Yes, we will update this notice as necessary to stay compliant with relevant laws.</p>
+    <p>Totesoft may update this policy when Wake's functionality, permissions, storage, logging, licensing, legal requirements, or service providers change. 
+      The updated version will be indicated by an updated "Revised" date and the updated version will be effective as soon as it is accessible. If we make material changes to this privacy notice, we may notify you either by prominently posting a notice of such changes or by directly sending you a notification. We encourage you to review this privacy notice frequently to be informed of how we are protecting your information.</p></div>
 </div>
 <div class="scribe">
-<h2>Data subject requests</h2>
-<p>For access or deletion requests relating to data handled by the app, contact <strong>info@totesoft.com</strong>. Because all app data resides in your own Atlassian site, your Jira administrators can also inspect or remove it directly.</p>
-</div>
-<div class="scribe">
-<h2>Changes</h2>
-<p>We will update this notice when the app's data handling changes and revise the date above. Material changes will be noted in the app's release notes.</p>
+  <h2>14.  Contact information for this notice: /h2>
+  <div class="indent">
+    <p>
+    If you have questions or comments about this notice, you may email us at privacy@totesoft.com or by post to:
+    </p>
+    <p>
+    Totesoft LLC<br>
+    No 5 Concourse Parkway, suite 3000<br>
+    Suite 3000<br>
+    Atlanta, GA 30328<br>
+    United States  </p>
+    </div>
 </div>
 </main>
 <div class="footer">TOTESOFT LLC &nbsp;·&nbsp; www.totesoft.com</div>
