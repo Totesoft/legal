@@ -22,7 +22,25 @@
 <p>This Privacy Policy explains how the Wake app for Jira Cloud accesses, processes, stores, and logs End-User Data. It supplements Totesoft's general privacy policy at https://www.totesoft.com/privacy-policy. To the extent that any provision of the General Policy conflicts with the provisions of this App-Specific Policy regarding Espresso, the provisions of this App-Specific Policy shall prevail.</p>
 </div>
 <div class="scribe">
-<h2>What the app reads</h2>
+  <h2>1. Scope and roles</h2>
+  <div class="indent">
+    Wake is an Atlassian Forge dashboard gadget. A user selects a saved Jira filter and display fields. Wake retrieves matching issues, displays a table, groups issues, calculates counts or numeric aggregates, and creates charts. Licensed functionality may add nested grouping, additional metrics, expanded paging, and CSV export.          <ol class="alpha-list">
+            <li>
+            <strong>Licensed Authorized Jira User</strong> <strong>(Customer)</strong> - Configures Wake Gadget on a dashboard to read two numeric source fields, apply an arithmetic operation, and write the result to a numeric target field.
+            </li>
+            <li>
+                  The Customer is the data controller of all End-User Data processed by the app.
+                    <ol>
+                      <li>Totesoft personnel have no access to End-User Data; the only exception is diagnostic log access through Atlassian's Forge tooling during a customer-initiated support investigation, as described section 5 in our debug logging statement. Wake marketplace app does not store or transfer end-userdata outside of the Atlassian platform.</li>
+                      <li>The customer controls which gadgets and filters are configured and remains responsible for the Jira content placed in those gadgets and for providing required notices to its users.</li>
+                      <li>The End-User who likes to view the gadget must have the necessary Jira permissions to view the data.</li>
+                    </ol>
+            </li>
+          </ol>
+          <p>The customer controls the saved filters, Jira permissions, dashboard access, selected fields, and content stored in Jira.</p>
+  </div>
+<div class="scribe">
+<h2>2. Data Wake accesses and processes</h2>
 <p>To display the gadget, the app reads Jira issues matching the filter or JQL the gadget is configured with — including the fields used for grouping and the numeric fields used for sum, average, and count. It also reads Jira field metadata (names and types) and your saved filters (name, description, owner, JQL, share permissions) so the configuring user can select one. Issue data is read with the configuring user's own permissions: the gadget can never show data its viewer could not already see in Jira. [VERIFY: adjust if any call runs asApp.]</p>
 </div>
 <div class="scribe">
