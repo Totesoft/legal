@@ -3,22 +3,33 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Wake — App Privacy Notice — Totesoft</title>
+<title>Wake Privacy Policy</title>
 <link rel="stylesheet" href="policy.css">
 </head>
 <body>
   <div id="site-banner"></div>
   <script src="../totesoft/include-banner.js"></script>
 <main class="page">
+  <div class="scribe">
 <h1>Wake — App Privacy Notice</h1>
-<p class="meta"><strong>Provider:</strong> Totesoft LLC · info@totesoft.com
-<strong>App:</strong> Wake (Jira dashboard gadget, Atlassian Forge)
-<strong>Last updated:</strong> August 19, 2026</p>
-<p>This notice describes how the Wake app handles data in your Jira Cloud site. It supplements the <a href="https://www.totesoft.com/privacy-policy">Totesoft privacy policy</a>. Wake runs entirely on Atlassian Forge infrastructure and in your browser within Jira; Totesoft operates no servers of its own for this app, and no data is sent to Totesoft or to any third party.</p>
+<p class="meta">
+  <strong>Provider:</strong> Totesoft LLC<br>
+  <strong>Email:</strong> <a href="mailto:info@totesoft.com">info@totesoft.com</a><br>
+<strong>App:</strong> Wake (Jira dashboard gadget, Atlassian Forge)<br>
+<strong>Last updated:</strong> August 20, 2026</p>
+</div>
+<div class="scribe">
+<p>This Privacy Policy explains how the Wake app for Jira Cloud accesses, processes, stores, and logs End-User Data. It supplements Totesoft's general privacy policy at https://www.totesoft.com/privacy-policy. To the extent that any provision of the General Policy conflicts with the provisions of this App-Specific Policy regarding Espresso, the provisions of this App-Specific Policy shall prevail.</p>
+</div>
+<div class="scribe">
 <h2>What the app reads</h2>
 <p>To display the gadget, the app reads Jira issues matching the filter or JQL the gadget is configured with — including the fields used for grouping and the numeric fields used for sum, average, and count. It also reads Jira field metadata (names and types) and your saved filters (name, description, owner, JQL, share permissions) so the configuring user can select one. Issue data is read with the configuring user's own permissions: the gadget can never show data its viewer could not already see in Jira. [VERIFY: adjust if any call runs asApp.]</p>
+</div>
+<div class="scribe">
 <h2>What the app writes</h2>
 <p>The app does not modify issues. It writes only its own gadget configuration.</p>
+</div>
+<div class="scribe">
 <h2>What the app stores</h2>
 <p>Gadget configuration (selected filter, group-by fields, aggregate fields, display options) is stored in Atlassian Forge hosted storage, which resides within your own Atlassian site. <strong>Issue data is not stored</strong> — it is fetched live each time the gadget renders. [VERIFY against final implementation, including any caching.]</p>
 <h2>What the app logs</h2>
@@ -31,12 +42,19 @@
 <li>No third-party subprocessors are used beyond Atlassian's own Forge platform.</li>
 <li>No credentials, tokens, or secrets are collected or stored.</li>
 </ul>
+</div>
+<div class="scribe">
 <h2>Retention and deletion</h2>
 <p>Gadget configuration persists while the gadget exists; removing the gadget from a dashboard stops its use. If the app is uninstalled, data in Atlassian Forge hosted storage is soft-deleted by Atlassian: reinstalling the app within 21 days relinks it to the existing data, and after that window the data is permanently deleted in accordance with Atlassian's standard data retention and disposal policy. Contact us to request earlier removal of stored configuration.</p>
+</div>
+<div class="scribe">
 <h2>Data subject requests</h2>
 <p>For access or deletion requests relating to data handled by the app, contact <strong>info@totesoft.com</strong>. Because all app data resides in your own Atlassian site, your Jira administrators can also inspect or remove it directly.</p>
+</div>
+<div class="scribe">
 <h2>Changes</h2>
 <p>We will update this notice when the app's data handling changes and revise the date above. Material changes will be noted in the app's release notes.</p>
+</div>
 </main>
 <div class="footer">TOTESOFT LLC &nbsp;·&nbsp; www.totesoft.com</div>
 </body>
