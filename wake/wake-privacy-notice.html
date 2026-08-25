@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Wake Privacy Policy</title>
-<link rel="stylesheet" href="policy.css">
+<link rel="stylesheet" href="../css/policy.css">
 </head>
 <body>
   <div id="site-banner"></div>
@@ -41,6 +41,25 @@
   </div>
 <div class="scribe">
 <h2>2. Data Wake accesses and processes</h2>
+<div class="indent">
+  <p>Depending on configuration and Jira permissions, Wake may access or process:</p>
+  <ol class="alpha-list">
+    <li>Jira site, user, dashboard, gadget, installation, and license context supplied by Atlassian;</li>
+    <li>Saved-filter identifiers, names, JQL, descriptions, owners, and share permissions;</li>
+    <li>Field metadata, including field identifiers, names, and schema information;</li>
+    <li>Issue identifiers and issue keys;</li>
+    <li>Configured display and grouping fields;</li>
+    <li>Standard fields required for display, currently including summary, issue type, status, priority, and subtask information;</li>
+    <li>Numeric and categorical field values selected by the user;</li>
+    <li>User-related Jira fields selected for display or grouping, which may contain names, account identifiers, avatars, or other personal data supplied by Jira;</li>
+    <li>Counts, sums, averages, grouped results, charts, and other values derived from the issues loaded; and</li>
+    <li>Technical status, retry, pagination, rate-limit, and error information.</li>
+  </ol>
+  <p>Wake intentionally avoids requesting all Jira fields and is designed to exclude heavy fields such as descriptions, attachments, comments, and worklogs from selectable/display fetches. The customer remains responsible for choosing fields and filters appropriate for dashboard viewers.</p>
+</div>
+
+<div class="scribe">
+<h2>3. What the app writes</h2>
 <p>To display the gadget, the app reads Jira issues matching the filter or JQL the gadget is configured with — including the fields used for grouping and the numeric fields used for sum, average, and count. It also reads Jira field metadata (names and types) and your saved filters (name, description, owner, JQL, share permissions) so the configuring user can select one. Issue data is read with the configuring user's own permissions: the gadget can never show data its viewer could not already see in Jira. [VERIFY: adjust if any call runs asApp.]</p>
 </div>
 <div class="scribe">
