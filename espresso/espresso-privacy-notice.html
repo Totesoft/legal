@@ -78,7 +78,8 @@
           <div class="indent">
             <p>Espresso keeps a small bounded diagnostic history for each configured post function, so that an administrator can see whether that rule is working. This is stored in Atlassian Forge hosted key-value storage. Each rule keeps up to 10 recent records.</p>
           
-          <p>Forge scopes storage per app installation. It is not a database operated by Totesoft, and Espresso contains no mechanism for Totesoft to read an installation's stored records.</p>
+          <p>Forge scopes storage per app installation. 
+             Espresso does not expose a vendor-facing application endpoint for browsing a customer's run-history records. Authorized Totesoft personnel can access Forge application logs. Any Atlassian platform or support access is governed by Atlassian capabilities, Totesoft access controls, and the customer's support authorizatio
           <ol class="alpha-list">
             <li><strong>How it is grouped</strong></li>
               <ol>
