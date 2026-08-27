@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Totesoft Security Policy — Totesoft</title>
+<link rel="stylesheet" href="../css/clear.css">
+</head>
+<body>
+  <div id="site-banner"></div>
+  <script src="../totesoft/include-banner.js"></script>  
+  <main class="page">
+<h1>Totesoft Security Policy</h1>
+<div class="meta">
+  <p><strong>Provider:</strong> Totesoft LLC, a Georgia (USA) limited liability company</p>
+  <p><strong>Security contact:</strong> <a href="mailto:security@totesoft.com">security@totesoft.com</a></p>
+  <p><strong>Applies to:</strong> Totesoft applications published on the Atlassian Marketplace and the Google Workspace Marketplace</p>
+  <p><strong>Version:</strong> 1.0 &nbsp;|&nbsp; <strong>Effective date:</strong> August 27, 2026</p>
+</div>
+<div class="scribe">
+<p>This Security Policy describes the security practices Totesoft LLC ("Totesoft") applies to the design, development, operation, and support of its Apps. It is a partner-level policy: it covers Totesoft as an organization and every App it publishes. App-specific data-handling disclosures are set out in each App's privacy policy, which this Security Policy supplements and does not replace. Totesoft's general privacy policy is at <a href="https://www.totesoft.com/privacy-policy">https://www.totesoft.com/privacy-policy</a>. App-specific security profiles appear in Annex A.</p>
+</div>
+<div class="scribe">
+<h2>1. Purpose and scope</h2>
+<div class="indent">
+<p>This Security Policy exists so that Customers, platform providers, and security reviewers can understand which security controls Totesoft owns, which controls are provided by the platform on which an App runs, and what Totesoft commits to do when a vulnerability or Security Incident arises.</p>
+<p>This Security Policy applies to all Totesoft Personnel and to every App. Where an App runs entirely inside a platform provider's infrastructure (for example, an Atlassian Forge app with no external egress), the platform provider supplies most infrastructure controls and Totesoft's obligations concentrate on application code, permissions, access to developer tooling, and operational conduct. Section 3 allocates those responsibilities.</p>
+</div>
+</div>
+<div class="scribe">
+    <h2>2. Definitions</h2>
+    <div class="indent">
+      <p>In this Security Policy, the following terms have the meanings given below. Each defined term has the same meaning wherever it appears.</p>
+      <ol class="alpha-list">
+        <li><strong>"App"</strong> means a software application that Totesoft develops and publishes on a Marketplace, including each version, environment, and edition of that application.</li>
+        <li><strong>"Customer"</strong> means the organization that installs an App on its own tenant, site, or domain and, for purposes of applicable data protection law, acts as the data controller of Customer Data.</li>
+        <li><strong>"Customer Data"</strong> means data that an App accesses, processes, stores, or logs on behalf of a Customer, including End-User Data as defined by the applicable Marketplace Partner Agreement. Customer Data excludes Totesoft's own business records and de-identified operational metrics that contain no Customer content.</li>
+        <li><strong>"Marketplace"</strong> means the Atlassian Marketplace, the Google Workspace Marketplace, or any comparable distribution channel operated by a Platform Provider through which Totesoft publishes an App.</li>
+        <li><strong>"Personnel"</strong> means Totesoft's members, employees, and any contractor Totesoft engages who is granted access to App source code, Platform Provider developer tooling, or Customer Data.</li>
+        <li><strong>"Platform Provider"</strong> means Atlassian Pty Ltd and its affiliates (for Atlassian Forge and Atlassian Cloud products) or Google LLC and its affiliates (for Google Workspace and Google Cloud), as applicable to a given App.</li>
+        <li><strong>"Production Environment"</strong> means the deployed instance of an App that Customers install from a Marketplace, as distinct from development and staging environments.</li>
+        <li><strong>"Security Incident"</strong> means any confirmed unauthorized access to, or unauthorized use, disclosure, alteration, loss, or destruction of, Customer Data or App source code, credentials, or deployment tooling. A Security Incident does not include an unsuccessful attempt, or a Vulnerability for which there is no evidence of exploitation.</li>
+        <li><strong>"Vulnerability"</strong> means a weakness in an App, or in Totesoft's development or operational practices, that could be exploited to compromise the confidentiality, integrity, or availability of Customer Data or of a Customer's environment.</li>
+      </ol>
+      </div>
+</div>
+<div class="scribe">
+<h2>3. Shared responsibility model</h2>
+    <div class="indent">
+    <p>Totesoft builds Apps to run inside the Platform Provider's infrastructure wherever the platform permits, so that infrastructure security is provided by the Platform Provider under its own published programs and certifications. The table below states, for each control area, which party is responsible for the Apps covered by this Security Policy. For Atlassian Forge apps, the allocation follows Atlassian's Forge shared responsibility model. Any App that departs from this model (for example, by egressing Customer Data to a Totesoft-operated service) will say so in its Annex A profile, and Totesoft will assume the additional responsibilities identified there before the App is released.</p>
+
+            <table>
+              <thead>
+                <tr><th style="width:28%">Control area</th><th style="width:36%">Platform Provider</th><th>Totesoft</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Physical security, data-center operations, hosting hardware</td><td>Provided by Platform Provider</td><td>Not applicable; Totesoft operates no data centers or servers for the Apps</td></tr>
+                <tr><td>Network security, DDoS protection, TLS termination, HSTS</td><td>Provided by Platform Provider for all App traffic that stays within the platform</td><td>Not applicable for non-egressing Apps; Totesoft-owned for any endpoint Totesoft operates</td></tr>
+                <tr><td>Encryption in transit and at rest for Customer Data held in platform storage and logs</td><td>Provided by Platform Provider (Forge hosted storage, Forge logs, Google Cloud services)</td><td>Totesoft confirms in each App's profile that no Customer Data is stored outside the platform; if it ever is, Totesoft owns full-disk encryption at rest</td></tr>
+                <tr><td>Tenant isolation and runtime sandboxing</td><td>Provided by Platform Provider</td><td>Totesoft owns correct use of platform isolation (per-installation storage keys, no cross-tenant lookups)</td></tr>
+                <tr><td>Platform authentication and authorization (OAuth, app identity, installation tokens)</td><td>Provided by Platform Provider</td><td>Totesoft owns the scopes an App requests and their justification</td></tr>
+                <tr><td>Application code, business logic, input validation, output handling</td><td>Not applicable</td><td>Totesoft-owned (Section 6)</td></tr>
+                <tr><td>Permissions and scopes requested by the App</td><td>Enforced by Platform Provider</td><td>Selected, minimized, and justified by Totesoft (Section 6.4)</td></tr>
+                <tr><td>Third-party dependencies bundled into the App</td><td>Not applicable</td><td>Totesoft-owned (Section 6.5)</td></tr>
+                <tr><td>App configuration secrets and environment variables</td><td>Secret storage mechanism provided by Platform Provider</td><td>Totesoft owns what is stored, who can set it, and rotation</td></tr>
+                <tr><td>Access to developer console, CLI, deployment, and log viewing</td><td>Identity and 2SV mechanisms provided by Platform Provider</td><td>Totesoft owns who holds access and how it is protected and revoked (Section 5)</td></tr>
+                <tr><td>Diagnostic logging content and verbose-mode controls</td><td>Log infrastructure and retention provided by Platform Provider</td><td>Totesoft owns log content, data minimization, and any verbose mode (Section 8)</td></tr>
+                <tr><td>Vulnerability scanning of published App artifacts</td><td>Performed by Platform Provider (for example, Atlassian Ecoscanner and AMS)</td><td>Totesoft owns triage and remediation within published timeframes (Section 9)</td></tr>
+                <tr><td>Incident detection within platform infrastructure</td><td>Provided by Platform Provider</td><td>Totesoft owns detection within App logs, response, and Customer notification (Section 10)</td></tr>
+                <tr><td>Customer-side administration (who installs the App, which projects or fields it is configured on, user permissions)</td><td>Tooling provided by Platform Provider</td><td>Not applicable; the Customer is responsible</td></tr>
+              </tbody>
+            </table>
+    </div>
+</div>
+<div class="scribe">
+<h2>4. Security governance and Personnel</h2>
+<div class="indent">
+<ol class="alpha-list">
+  <li><strong>Accountability.</strong> Totesoft designates one of its members as security owner. The security owner is accountable for this Security Policy, for the security contact mailbox, and for coordination with Platform Providers on Vulnerabilities and Security Incidents.</li>
+  <li><strong>Confidentiality.</strong> Every member of Personnel is bound by written confidentiality obligations covering App source code, credentials, and Customer Data before receiving access to any of them.</li>
+  <li><strong>Awareness.</strong> Personnel with access to Platform Provider tooling review this Security Policy and the Platform Provider's current security requirements for Marketplace apps at onboarding and at least annually thereafter.</li>
+  <li><strong>Separation.</strong> Totesoft keeps App development and deployment credentials separate from the credentials Totesoft uses for its other lines of business, including its IT services and revenue-cycle-management subcontracting work. Customer Data from one line of business is not used in another.</li>
+  <li><strong>Devices.</strong> Personnel access App source code and Platform Provider tooling only from devices that have full-disk encryption enabled, an up-to-date operating system with automatic security updates, a screen lock, and endpoint protection.</li>
+</ol>
+</div>
+</div>
+<div class="scribe">
+<h2>5. Identity and access management</h2>
+<div class="indent">
+  <ol class="alpha-list">
+    <li><strong>Named accounts.</strong> Each member of Personnel uses an individual, named account for the Platform Provider developer console, CLI, source-code repository, and Marketplace partner account. Totesoft does not use shared accounts for these systems.</li>
+    <li><strong>Multi-factor authentication.</strong> Two-step verification is enabled on every Atlassian account, Google account, and source-code repository account that holds access to an App. Totesoft complies with Atlassian's two-step verification requirement for Marketplace partners.</li>
+    <li><strong>Least privilege.</strong> Personnel receive the minimum role needed for their work. Production deployment rights are limited to the security owner and to Personnel the security owner has designated in writing.</li>
+    <li><strong>Credential handling.</strong> Personnel store passwords, API tokens, and CLI credentials in a password manager. Credentials are never committed to source control, embedded in App code, or transmitted in plain text. Any credential that is exposed is rotated on the day the exposure is discovered.</li>
+    <li><strong>Access reviews.</strong> The security owner reviews the list of Personnel with access to each App's developer console, repository, and Marketplace partner account at least every six months and whenever Personnel change role.</li>
+    <li><strong>Revocation.</strong> When a member of Personnel leaves Totesoft or no longer requires access, Totesoft revokes that person's access to all App-related systems within one business day and rotates any shared secret that person could have obtained.</li>
+  </ol>
+</div>
+</div>
+<div class="scribe">
+    <h2>6. Secure development and change management</h2>
+    <div class="indent">
+      <ol class="alpha-list">
+        <li><strong>Source control.</strong> All App source code, manifests, and infrastructure configuration are kept in a private version-controlled repository. Every change to the Production Environment is traceable to a commit and to the person who deployed it.</li>
+        <li><strong>Review before release.</strong> No change reaches the Production Environment without review against a documented pre-release checklist covering the items in this Section 6. Where more than one engineer is assigned to an App, a second engineer reviews each production change. Where a single engineer maintains an App, the checklist review is recorded and automated checks (Section 6.6) must pass before deployment.</li>
+        <li><strong>Environments.</strong> Totesoft maintains separate development, staging, and production environments for each App. Development and staging environments use synthetic or Totesoft-owned test data. Customer Data is not copied into non-production environments.</li>
+        <li><strong>Least-privilege permissions.</strong> Each App requests only the platform scopes required for its documented functionality. Before release, and before any scope change, the security owner records a written justification for each scope, which Totesoft also publishes in the App's Marketplace listing where the Marketplace provides a field for it. Scopes that grant read or write access beyond the App's documented purpose are not requested.</li>
+        <li><strong>Dependency management.</strong> Third-party packages are pinned through a lockfile, sourced only from official registries, and checked for known vulnerabilities before each release. Totesoft remediates dependency vulnerabilities within the timeframes in Section 9.4.</li>
+        <li><strong>Automated testing.</strong> Each App has an automated test suite that runs before deployment. Where an App's privacy policy makes a data-minimization statement that is enforced in code (for example, that a stored diagnostic record never contains field values or free-form Customer text), that statement is covered by a test that fails if the behavior changes.</li>
+        <li><strong>Secure coding.</strong> Totesoft validates and constrains all input received from the platform, Customer configuration, and API responses; uses the Platform Provider's supplied APIs and libraries rather than hand-built alternatives for authentication and requests; and avoids executing dynamically constructed code.</li>
+        <li><strong>Deployment.</strong> Production deployments are made through the Platform Provider's official tooling by authorized Personnel from a 2SV-protected account. Totesoft does not publish App artifacts from an automated pipeline unless the pipeline's credentials are held to the standard in Section 5.</li>
+        <li><strong>Change disclosure.</strong> If a release changes what Customer Data an App accesses, stores, or logs, or adds an external service or subprocessor, Totesoft updates the App's privacy policy and Marketplace privacy and security disclosures before releasing the change.</li>
+      </ol>
+    </div>
+</div>
+<div class="scribe">
+      <h2>7. Data protection</h2>
+      <div class="indent">
+        <ol class="alpha-list">
+        <li><strong>Minimization.</strong> Totesoft designs each App to access, hold in memory, store, and log the least Customer Data needed for its documented function. Each App's privacy policy states specifically what is accessed, stored, and logged.</li>
+        <li><strong>No egress by default.</strong> Totesoft's Apps do not transmit Customer Data to any Totesoft-operated server or to any third party unless the App's Annex A profile expressly states otherwise. Totesoft does not use Customer Data for analytics, advertising, or model training.</li>
+        <li><strong>Encryption.</strong> Customer Data held in Platform Provider storage and logs is encrypted in transit and at rest by the Platform Provider. If Totesoft ever stores Customer Data outside a Platform Provider's infrastructure, Totesoft will apply full-disk encryption at rest and TLS 1.2 or higher in transit, and will disclose that storage in the App's profile before release.</li>
+        <li><strong>Secrets and credentials.</strong> Totesoft's Apps do not request, collect, or store user passwords, personal access tokens, or other shared secrets belonging to Customers or their users.</li>
+        <li><strong>Retention and deletion.</strong> Retention periods and deletion mechanisms for each App are stated in that App's privacy policy. Totesoft does not promise a deletion method the App or platform does not technically provide.</li>
+        <li><strong>Data subject and Customer requests.</strong> Totesoft acknowledges requests concerning Customer Data within three business days of receipt at <a href="mailto:support@totesoft.com">support@totesoft.com</a> and handles them according to the applicable App privacy policy.</li>
+      </ol>
+      </div>
+</div>
+<div class="scribe">
+<h2>8. Logging, monitoring, and diagnostic access</h2>
+<div class="indent">
+  <ol class="alpha-list">
+    <li><strong>Log content.</strong> During normal operation an App writes structured diagnostic entries that identify the operation, outcome, and technical context of a run, and that exclude field values, message bodies, and other Customer content wherever the App's design permits. Each App's privacy policy states exactly what its logs contain.</li>
+    <li><strong>Log access.</strong> Only Personnel with a named, 2SV-protected developer account can view App logs, and only through the Platform Provider's console. Log retention is governed by the Platform Provider.</li>
+    <li><strong>Verbose diagnostic modes.</strong> Where an App offers a verbose logging mode that would cause Customer content to appear in logs, that mode is disabled by default, can be enabled only by the security owner or a designee, is enabled only to investigate a specific fault reported by a Customer, and is disabled when the investigation concludes. Totesoft records each activation, its purpose, and its duration.</li>
+    <li><strong>Support access.</strong> Totesoft accesses a Customer's installation-scoped diagnostics only in connection with a support request from that Customer's administrator or a Security Incident affecting that Customer. Totesoft has no mechanism to read Customer Data back from a Customer's site except through the Platform Provider's own logs and tooling.</li>
+    <li><strong>Monitoring.</strong> Totesoft reviews App error rates and failure logs on a regular cadence and after each release, and treats an unexplained change in error patterns as a trigger for investigation under Section 10.</li>
+  </ol>
+</div>
+</div>
+<div class="scribe">
+<h2>9. Vulnerability management and disclosure</h2>
+<div class="indent">
+  <ol class="alpha-list">
+  <li><strong>Reporting.</strong> Anyone may report a suspected Vulnerability in an App to <a href="mailto:security@totesoft.com">security@totesoft.com</a>. Reporters should not include live Customer Data or production credentials in an initial report. Totesoft will not pursue legal action against a reporter who acts in good faith, tests only against their own or Totesoft's environments, and gives Totesoft a reasonable opportunity to remediate before public disclosure.</li>
+  <li><strong>Acknowledgment.</strong> Totesoft acknowledges each report within three business days and provides the reporter with a triage outcome within ten business days.</li>
+  <li><strong>Platform channels.</strong> Totesoft maintains a current security contact in its Marketplace partner account, monitors tickets assigned to it in the Atlassian Marketplace Security (AMS) project, and responds to Platform Provider scanner findings and security requirements notices within the platform's expected triage period.</li>
+  <li><strong>Remediation timeframes.</strong> Totesoft rates each confirmed Vulnerability using CVSS v3.1 or later and remediates it within the following timeframes, measured from the date the Vulnerability is reported or triaged, whichever the Platform Provider's policy specifies. These timeframes match Atlassian's Security Bug Fix Policy for Marketplace cloud apps, and Totesoft will adopt any shorter timeframe a Platform Provider later publishes.
+    <table>
+      <thead><tr><th>Severity</th><th>CVSS score</th><th>Fixed within</th></tr></thead>
+      <tbody>
+        <tr><td>Critical</td><td>9.0 or higher</td><td>10 days</td></tr>
+        <tr><td>High</td><td>7.0 to 8.9</td><td>4 weeks</td></tr>
+        <tr><td>Medium</td><td>4.0 to 6.9</td><td>12 weeks</td></tr>
+        <tr><td>Low</td><td>below 4.0</td><td>25 weeks</td></tr>
+      </tbody>
+    </table>
+  </li>
+  <li><strong>Extensions.</strong> Totesoft requests an extension to a remediation date only on the grounds the Platform Provider accepts (for example, a fix that depends on a platform change or that would break Customer installations) and only through the Platform Provider's process.</li>
+  <li><strong>Disclosure.</strong> After a Vulnerability is remediated, Totesoft publishes a release note that identifies the affected versions and the fix at a level of detail that does not enable exploitation of unpatched installations. Where the Platform Provider auto-updates the App, Totesoft states that in the note.</li>
+  <li><strong>Security testing.</strong> Totesoft performs its own security review of each App before initial release and after any change to scopes, storage, logging, or external connectivity. Totesoft will state in each App's Annex A profile whether the App is enrolled in a Platform Provider vulnerability disclosure or bug bounty program and whether a third-party penetration test has been performed.</li>
+</ol>
+</div>
+</div>
+<div class="scribe">
+<h2>10. Security Incident response</h2>
+<div class="indent">
+  <ol class="alpha-list">
+  <li><strong>Plan.</strong> Totesoft maintains a written incident response procedure covering detection, classification, containment, eradication, recovery, notification, and post-incident review. The security owner leads the response.</li>
+  <li><strong>Containment.</strong> On confirming a Security Incident, Totesoft immediately takes the containment steps available to it, which may include rotating credentials, disabling a verbose logging mode, deploying a patched version, or requesting that the Platform Provider pause the App.</li>
+  <li><strong>Platform Provider notification.</strong> Totesoft notifies the Platform Provider of a Security Incident affecting an App through the Platform Provider's designated channel and within the timeframe the Platform Provider's partner incident program requires, and cooperates with the Platform Provider's investigation.</li>
+  <li><strong>Customer notification.</strong> Totesoft notifies each affected Customer's administrator contact without undue delay and no later than 72 hours after confirming that the Customer's data was affected. The notification describes what happened, what data was involved, what Totesoft has done, and what the Customer can do, and identifies a contact for follow-up. Totesoft provides updates as material facts change and a closing summary when the incident is resolved.</li>
+  <li><strong>Legal obligations.</strong> Totesoft gives any notice required by applicable data protection or breach-notification law within the time that law requires, and in any event the timing in Section 10.4 does not extend a shorter statutory deadline.</li>
+  <li><strong>Post-incident review.</strong> Within 30 days after resolution, Totesoft completes a written review identifying root cause, the controls that failed or were absent, and the corrective actions adopted, and updates this Security Policy where the review calls for it.</li>
+  <li><strong>Records.</strong> Totesoft retains incident records, including timeline, decisions, and notifications sent, for at least three years.</li>
+</ol>
+</div>
+</div>
+<div class="scribe">
+<h2>11. Business continuity and recovery</h2>
+<div class="indent">
+  <ol class="alpha-list">
+  <li><strong>Platform availability.</strong> The availability of each App in the Production Environment depends on the Platform Provider's infrastructure, which the Platform Provider operates under its own service commitments and status reporting. Totesoft does not operate infrastructure that an App depends on at runtime unless stated in Annex A.</li>
+  <li><strong>Source and configuration recovery.</strong> App source code, manifests, and deployment configuration are held in a hosted version-control service with off-site redundancy. Totesoft can rebuild and redeploy any App from the repository using Platform Provider tooling.</li>
+  <li><strong>Key-person continuity.</strong> Because Totesoft is a small organization, Totesoft designates a secondary member of Personnel who holds recovery access to the source repository, the Marketplace partner account, and the Platform Provider developer console, so that a security fix can be deployed if the primary maintainer is unavailable.</li>
+  <li><strong>Customer Data recovery.</strong> Customer Data that an App keeps in Platform Provider storage is recoverable only to the extent the Platform Provider's data lifecycle permits, as described in each App's privacy policy. Totesoft does not maintain independent backups of Customer Data.</li>
+</ol>
+</div>
+</div>
+<div class="scribe">
+<h2>12. Third parties and subprocessors</h2>
+<div class="indent">
+  <ol class="alpha-list">
+  <li><strong>Current subprocessors.</strong> For each App, the only third party that processes Customer Data is the Platform Provider that hosts the App, under the Customer's own agreement with that Platform Provider. Totesoft engages no other subprocessor for Customer Data unless the App's Annex A profile and privacy policy list one.</li>
+  <li><strong>Adding a subprocessor.</strong> Before engaging a new subprocessor for Customer Data, Totesoft assesses the subprocessor's security practices, binds it to written data-protection terms no less protective than this Security Policy, updates the App's privacy policy and Marketplace disclosures, and releases the change only after those updates are published.</li>
+  <li><strong>Tooling vendors.</strong> Vendors that Totesoft uses for development, source control, and communications do not receive Customer Data. Totesoft applies the access controls in Section 5 to those accounts.</li>
+</ol>
+</div>
+</div>
+<div class="scribe">
+<h2>13. Compliance, certifications, and Customer assessments</h2>
+<div class="indent">
+  <ol class="alpha-list">
+  <li><strong>Certifications.</strong> Totesoft does not currently hold SOC 2, ISO 27001, or similar third-party certifications for its own operations. Infrastructure controls for the Apps are covered by the Platform Provider's certifications, which the Platform Provider publishes on its trust site. Totesoft will not represent that a Platform Provider's certification extends to Totesoft's own organizational controls.</li>
+  <li><strong>Marketplace requirements.</strong> Totesoft complies with the Atlassian Marketplace Partner Agreement, Atlassian's security requirements for cloud apps, and the corresponding Google Workspace Marketplace program policies, as each is in force from time to time, and completes the identity and business verification each Marketplace requires.</li>
+  <li><strong>Disclosures.</strong> Totesoft completes and maintains the privacy and security disclosures each Marketplace provides for its Apps, including the Atlassian Marketplace Privacy and Security tab, and updates them before releasing any change that would make them inaccurate.</li>
+  <li><strong>Customer questionnaires.</strong> Totesoft responds to a Customer's security questionnaire or assessment request within ten business days of receipt at <a href="mailto:security@totesoft.com">security@totesoft.com</a>. Totesoft will provide a completed CAIQ Lite or equivalent self-assessment for an App on request.</li>
+  <li><strong>Accuracy.</strong> Every statement in this Security Policy describes a control Totesoft actually operates. Where a control is aspirational or not yet implemented, Totesoft says so rather than stating it as present.</li>
+</ol>
+</div>
+</div>
+<div class="scribe">
+<h2>14. Policy maintenance</h2>
+<div class="indent">
+  <ol class="alpha-list">
+  <li>The security owner reviews this Security Policy at least annually, after any Security Incident, and whenever a Platform Provider materially changes its security requirements for Marketplace apps.</li>
+  <li>Totesoft records each revision by updating the version number and effective date above. Material changes are noted in the release notes of any affected App.</li>
+  <li>If this Security Policy conflicts with an App's privacy policy on a question of what data the App handles, the App's privacy policy controls. If they conflict on a question of Totesoft's security practices, this Security Policy controls.</li>
+</ol>
+</div>
+</div>
+<div class="scribe">
+<h2>15. Contact</h2>
+<div class="indent">
+<p>Security reports and assessment requests: <a href="mailto:security@totesoft.com">security@totesoft.com</a><br>
+Support and data requests: <a href="mailto:support@totesoft.com">support@totesoft.com</a><br>
+General: <a href="mailto:info@totesoft.com">info@totesoft.com</a></p>
+</div>
+</div>
+<div class="scribe">  
+<h2>Annex A. App-specific security profiles</h2>
+<div class="indent">
+<div class="scribe">
+<p class="note">Each profile states how the App fits the shared responsibility model in Section 3 and records the disclosures that vary by App. A profile is added or updated before the corresponding App version is released.</p>
+</div>
+</div>
+<div class="scribe">
+<h3>A.1 Espresso (Jira Cloud workflow post function, Atlassian Forge)</h3>
+<div class="indent">
+<table>
+  <tbody>
+    <tr><th style="width:34%">Privacy policy</th><td><a href="https://legal.totesoft.com/espresso/espresso-privacy-notice.html">https://legal.totesoft.com/espresso/espresso-privacy-notice.html</a></td></tr>
+    <tr><th>Hosting</th><td>Runs entirely on Atlassian Forge. No Totesoft-operated server. No external network egress declared in the production manifest.</td></tr>
+    <tr><th>Customer Data stored outside Atlassian</th><td>None.</td></tr>
+    <tr><th>Customer Data processed outside Atlassian</th><td>None.</td></tr>
+    <tr><th>Storage inside Atlassian</th><td>Forge hosted key-value storage, scoped per installation, holding a bounded diagnostic run history (up to 10 records per configured rule) that contains no field values, calculated results, user identifiers, or free-form Customer text.</td></tr>
+    <tr><th>Logging</th><td>Forge application logs with structured outcome entries; field values excluded in normal operation. A verbose mode (ESPRESSO_DEBUG) is controlled under Section 8.3 and is off by default.</td></tr>
+    <tr><th>Scopes requested</th><td>The Jira scopes required to read field metadata, read the configured numeric fields on the transitioned issue, and update the configured target field, plus Forge storage. Justification for each scope is recorded in the Marketplace Privacy and Security tab.</td></tr>
+    <tr><th>Secrets handled</th><td>None. The App does not access Atlassian personal access tokens, passwords, or other shared secrets.</td></tr>
+    <tr><th>Subprocessors</th><td>Atlassian only.</td></tr>
+    <tr><th>Encryption</th><td>Provided by Atlassian for Forge storage, logs, and all in-platform traffic.</td></tr>
+    <tr><th>Data residency</th><td>Customer Data is stored exclusively in Atlassian Forge hosted storage, which follows Atlassian's Forge data residency capabilities.</td></tr>
+    <tr><th>Security program enrollment</th><td>Vulnerability reports accepted at security@totesoft.com under Section 9. Enrollment in Atlassian's Marketplace Vulnerability Disclosure Program or Bug Bounty Program: not enrolled at the effective date of this version.</td></tr>
+    <tr><th>Third-party penetration test</th><td>None at the effective date of this version.</td></tr>
+  </tbody>
+</table>
+</div>
+</div>
+<div class="scribe">  
+<h3>A.2 Google Workspace apps</h3>
+<div class="indent">
+<p>Totesoft's Google Workspace add-ons and Marketplace applications run on Google Apps Script or Google Cloud within the Customer's Google Workspace domain. A profile in the form of A.1 will be published for each such App before its Marketplace listing goes live, identifying its OAuth scopes, any Google Cloud storage it uses, its logging behavior, and any subprocessor.</p>
+</div>
+</div>
+</main>
+<div class="footer">
+  TOTESOFT LLC · <a href="https://www.totesoft.com">www.totesoft.com</a> · Security Policy v1.0 · Effective August 27, 2026
+</div>
+
+</body>
+</html>
