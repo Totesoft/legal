@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Totesoft Third Party Component Security Policy — Totesoft</title>
+<link rel="stylesheet" href="../css/clear.css">
+</head>
+<body>
+  <div id="site-banner"></div>
+  <script src="../totesoft/include-banner.js"></script>
+  <main class="page">
+<h1>Totesoft Third-Party Software Component Security Policy</h1>
+<div class="meta">
+  <p><strong>Provider:</strong> Totesoft LLC, a Georgia (USA) limited liability company</p>
+  <p><strong>Policy owner:</strong> Siva S. Thangaraj, CEO</p>
+  <p><strong>Security contact:</strong> <a href="mailto:security@totesoft.com">security@totesoft.com</a></p>
+  <p><strong>Applies to:</strong> Totesoft applications published on the Atlassian Marketplace, AWS Marketplace, IBM Marketplace, Google Cloud Marketplace, and Microsoft Azure Marketplace</p>
+  <p><strong>Review cycle:</strong> Annual, or on material change to the development process</p>
+  <p><strong>Version:</strong> 1.0 &nbsp;|&nbsp; <strong>Effective date:</strong> September 15, 2026</p>
+</div>
+<div class="scribe">
+<p>This policy defines how Totesoft LLC ("Totesoft") evaluates, approves, monitors, and retires third-party software components used in products it develops and distributes. It exists to ensure that security risk introduced by external code is identified before adoption and managed continuously thereafter.</p>
+</div>
+<div class="scribe">
+<h2>1. Purpose</h2>
+<div class="indent">
+<p>This policy defines how Totesoft evaluates, approves, monitors, and retires third-party software components used in products it develops and distributes. It exists to ensure that security risk introduced by external code is identified before adoption and managed continuously thereafter.</p>
+</div>
+</div>
+<div class="scribe">
+<h2>2. Scope</h2>
+<div class="indent">
+<p>This policy applies to all third-party software incorporated into or supporting a Totesoft product, including:</p>
+<ol class="alpha-list">
+  <li>Open-source libraries and packages, including transitive dependencies.</li>
+  <li>Commercial software, SaaS platforms, and managed services.</li>
+  <li>Build and CI/CD tooling, including third-party CI actions and container base images.</li>
+  <li>Platform providers on whose infrastructure Totesoft products run.</li>
+</ol>
+</div>
+</div>
+<div class="scribe">
+<h2>3. Supplier tiering</h2>
+<div class="indent">
+<p>Third-party components are classified into two tiers, because the assurance that can be obtained differs fundamentally between them.</p>
+</div>
+</div>
+<div class="scribe">
+<h3>Tier 1 — Commercial and contracted suppliers</h3>
+<div class="indent">
+<p>Suppliers with whom Totesoft holds a commercial or contractual relationship. This includes SaaS vendors, platform providers, managed service providers, and any paid software dependency.</p>
+<p><strong>Requirement: security certification is mandated.</strong> Before a Tier 1 supplier is approved, Totesoft requires the supplier to submit at least one of the following:</p>
+<ol class="alpha-list">
+  <li>A current SOC 2 Type II report.</li>
+  <li>A current ISO/IEC 27001 certificate with a statement of applicability.</li>
+  <li>An equivalent recognized attestation, or a current independent penetration test summary where no formal certification exists.</li>
+</ol>
+<p>Where a supplier operates a published trust or compliance portal, retrieval of the current report from that portal satisfies this requirement.</p>
+<p>Certifications are re-verified annually or on expiry, whichever is sooner. A supplier that cannot produce any of the above is escalated to the policy owner for an explicit, recorded risk-acceptance decision, or is not adopted.</p>
+</div>
+</div>
+<div class="scribe">
+<h3>Tier 2 — Open-source components</h3>
+<div class="indent">
+<p>Publicly published open-source packages with no contracted supplier.</p>
+<p><strong>Security certifications cannot be mandated from Tier 2 suppliers</strong>, as no commercial relationship or accountable party exists. Totesoft therefore applies the compensating technical controls in Section 4 to every Tier 2 component. This substitution is a deliberate policy position, not an exception.</p>
+</div>
+</div>
+<div class="scribe">
+<h2>4. Controls applied to open-source components</h2>
+</div>
+<div class="scribe">
+<h3>4.1 Pre-adoption review</h3>
+<div class="indent">
+<p>Before a new direct dependency is introduced, the engineer proposing it confirms and records:</p>
+<ol class="alpha-list">
+  <li><strong>License compatibility</strong> with Totesoft's distribution model.</li>
+  <li><strong>Maintenance health</strong> — the project shows recent releases, an active maintainer, and a responsive issue tracker.</li>
+  <li><strong>Known vulnerabilities</strong> — the current version carries no unremediated Critical or High advisory.</li>
+  <li><strong>Necessity and surface</strong> — the component is required, and no materially smaller or already-adopted alternative serves the purpose.</li>
+  <li><strong>Transitive footprint</strong> — the dependencies the component brings with it are reviewed alongside it.</li>
+</ol>
+<p>Approval is recorded in the pull request introducing the dependency.</p>
+</div>
+</div>
+<div class="scribe">
+<h3>4.2 Continuous monitoring</h3>
+<div class="indent">
+<ol class="alpha-list">
+  <li><strong>Software composition analysis</strong> runs on every pull request and on every branch merged to the default branch, covering all package manifests in the repository.</li>
+  <li><strong>Automated dependency alerting</strong> is enabled at the repository level and raises pull requests for vulnerable and outdated dependencies on a weekly cadence.</li>
+  <li><strong>Static analysis</strong> runs on every pull request using security rulesets that include the OWASP Top Ten.</li>
+  <li><strong>Secret scanning</strong> runs against the repository and its history.</li>
+</ol>
+</div>
+</div>
+<div class="scribe">
+<h3>4.3 Supply-chain integrity</h3>
+<div class="indent">
+<ol class="alpha-list">
+  <li>Dependency versions are locked by committed lockfiles; unpinned version ranges are not permitted in a release build.</li>
+  <li>Third-party CI/CD actions are pinned to full 40-character commit SHAs rather than mutable tags or branch references, to prevent silent repointing by the action owner.</li>
+  <li>Updates to pinned references arrive only through reviewed pull requests.</li>
+</ol>
+</div>
+</div>
+<div class="scribe">
+<h3>4.4 Remediation</h3>
+<div class="indent">
+<table>
+  <thead>
+    <tr><th>Severity</th><th>Remediation target</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Critical</td><td>7 calendar days</td></tr>
+    <tr><td>High</td><td>30 calendar days</td></tr>
+    <tr><td>Moderate</td><td>Next scheduled release</td></tr>
+    <tr><td>Low</td><td>Tracked; addressed at maintainer discretion</td></tr>
+  </tbody>
+</table>
+<p>Each finding is dispositioned as <strong>Remediate</strong>, <strong>Accept</strong> (with a recorded rationale and expiry), or <strong>False positive</strong> (with a recorded rationale). No finding is closed without a disposition. Where no upstream fix exists within the target window, the component is assessed for replacement or for a compensating control.</p>
+</div>
+</div>
+<div class="scribe">
+<h3>4.5 Retirement</h3>
+<div class="indent">
+<p>A component is scheduled for replacement where it becomes unmaintained, where its license terms change incompatibly, or where an unremediated Critical or High advisory persists beyond its target window with no upstream remedy.</p>
+</div>
+</div>
+<div class="scribe">
+<h2>5. Records</h2>
+<div class="indent">
+<p>The following are retained and available on request:</p>
+<ol class="alpha-list">
+  <li>Dependency inventory per product, derived from committed lockfiles.</li>
+  <li>Dated composition-analysis and static-analysis scan reports.</li>
+  <li>Finding dispositions and risk acceptances.</li>
+  <li>Tier 1 supplier certifications and their verification dates.</li>
+</ol>
+<p>Scan evidence is retained for a minimum of 12 months and refreshed before each product release.</p>
+</div>
+</div>
+<div class="scribe">
+<h2>6. Release gate</h2>
+<div class="indent">
+<p>No product release is published where an unremediated Critical or High severity finding is present in a shipped component, unless an explicit risk acceptance has been recorded and approved by the policy owner prior to release.</p>
+</div>
+</div>
+<div class="scribe">
+<h2>7. Responsibilities</h2>
+<div class="indent">
+<table>
+  <thead>
+    <tr><th>Role</th><th>Responsibility</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Policy owner</td><td>Maintains this policy; approves risk acceptances; verifies Tier 1 certifications annually</td></tr>
+    <tr><td>Engineer introducing a dependency</td><td>Performs and records the Section 4.1 pre-adoption review</td></tr>
+    <tr><td>Release approver</td><td>Confirms the Section 6 gate before publishing</td></tr>
+  </tbody>
+</table>
+</div>
+</div>
+<div class="scribe">
+<h2>8. Exceptions</h2>
+<div class="indent">
+<p>Any deviation from this policy requires written approval from the policy owner, with a stated rationale, a compensating control, and an expiry date. Exceptions are reviewed at each policy review.</p>
+</div>
+</div>
+<div class="scribe">
+<h2>9. Review</h2>
+<div class="indent">
+<p>This policy is reviewed at least annually. The review confirms that the controls described remain in force and that the tooling referenced remains in use.</p>
+</div>
+</div>
+<div class="scribe">
+<h2>Adoption record</h2>
+<div class="indent">
+<table>
+  <thead>
+    <tr><th>Version</th><th>Date</th><th>Author</th><th>Change</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>1.0</td><td>September 15, 2026</td><td>Siva S. Thangaraj</td><td>Initial adoption</td></tr>
+  </tbody>
+</table>
+</div>
+</div>
+</main>
+<div class="footer">
+  TOTESOFT LLC · <a href="https://www.totesoft.com">www.totesoft.com</a> · Third-Party Software Component Security Policy v1.0 · Effective September 15, 2026
+</div>
+
+</body>
+</html>
