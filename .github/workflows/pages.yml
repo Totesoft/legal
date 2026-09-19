@@ -38,6 +38,10 @@ jobs:
             ./ _site/
           touch _site/.nojekyll
 
+      # Scan the built output, not the repo: _site is exactly what goes live.
+      - name: Check for unfilled placeholders
+        run: python3 scripts/check_placeholders.py _site
+
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
