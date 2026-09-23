@@ -3,3 +3,5 @@ espresso/_archive/*
 **/.DS_Store
 **/*.md
 wake/
+css/policy.css
+espresso/policy.css
