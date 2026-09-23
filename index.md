@@ -8,7 +8,7 @@ permalink: /
 
 Provider: **Totesoft LLC**  
 General privacy policy: https://www.totesoft.com/privacy-policy 
-Support: [{{SUPPORT_CONTACT_EMAIL}}](mailto:{{SUPPORT_CONTACT_EMAIL}})  
+Support: info@totesoft.com (mailto:{{SUPPORT_CONTACT_EMAIL}})  
 Security: [{{SECURITY_CONTACT_EMAIL}}](mailto:{{SECURITY_CONTACT_EMAIL}})
 
 ## Espresso
